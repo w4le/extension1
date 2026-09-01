@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Social Monitor",
+  "version": "2.0.0",
+  "description": "Monitor Reddit posts from subreddits and users with customizable notifications",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.reddit.com/*",
+    "https://api.reddit.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Social Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 450px;
+            max-height: 600px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            color: #333333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333333;
+        }
+        .share-btn {
+            font-size: 12px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            padding: 5px 12px;
+            border-radius: 4px;
+            color: #333333;
+        }
+        .share-btn:hover {
+            background: #e0e0e0;
+        }
+        .controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .controls button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .fetch-btn {
+            background: #667eea;
+            color: #ffffff;
+        }
+        .fetch-btn:hover {
+            background: #5a67d8;
+        }
+        .settings-btn {
+            background: #f0f0f0;
+            color: #333333;
+        }
+        .settings-btn:hover {
+            background: #e0e0e0;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: none;
+            font-size: 13px;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .status.loading {
+            background: #e2e3e5;
+            color: #383d41;
+            display: block;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .posts-container {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .post-item {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .post-item:hover {
+            background: #f0f0f0;
+        }
+        .post-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333333;
+            line-height: 1.4;
+        }
+        .post-meta {
+            font-size: 11px;
+            color: #666666;
+        }
+        .score {
+            color: #ff4500;
+            font-weight: bold;
+        }
+        .time-ago {
+            color: #888888;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888888;
+            font-size: 13px;
+        }
+        .disclaimer {
+            font-size: 8px;
+            color: #cccccc;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.4;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Social Monitor</h1>
+        <button class="share-btn" id="shareBtn">Share</button>
+    </div>
+    
+    <div class="controls">
+        <button class="fetch-btn" id="fetchBtn">Fetch Posts</button>
+        <button class="settings-btn" id="settingsBtn">Settings</button>
+    </div>
+    
+    <div class="status" id="status"></div>
+    
+    <div class="posts-container" id="posts">
+        <div class="empty-state">Click "Fetch Posts" to see latest posts</div>
+    </div>
+    
+    <div class="disclaimer">
+        This extension is for personal use only. Users are responsible for complying with Reddit's API terms of service and rate limits.
+        Do not use for spam, harassment, or any activity that violates platform policies.
+        The developer is not responsible for any misuse of this tool.
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
