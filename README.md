@@ -42,3 +42,41 @@ A Chrome extension that monitors Reddit posts and other similar platforms. see p
 
 ### Subreddits
 Enter one subreddit per line without the r/ prefix:
+
+
+### Users
+Enter one username per line without the u/ prefix:
+
+### Keywords
+Filter posts by keywords. Leave empty for all posts.
+
+## Permissions
+
+This extension requires:
+- **storage**: To save your settings
+- **alarms**: To schedule checks
+- **notifications**: To send desktop notifications
+- **host_permissions**: To access Reddit's API
+
+## Privacy
+
+- No data is collected or sent to any server
+- All settings are stored locally in your browser
+- No tracking or analytics
+- Open source - review the code yourself
+
+## Disclaimer
+
+This extension is for personal use only. Users are responsible for complying with Reddit's API terms of service and rate limits. Do not use for spam, harassment, or any activity that violates platform policies. The developer is not responsible for any misuse of this tool.
+
+## License
+
+MIT License
+
+## Contributing
+
+Feel free to fork this repository and submit pull requests.
+
+## Support
+
+Open an issue on GitHub for bugs or feature requests.
